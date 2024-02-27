@@ -27,27 +27,42 @@ To enhance the robustness of the test suite, the team conducted a comprehensive 
 # 3 Test cases developed
 
 
-**DataUtilitiesTest**
+# DataUtilities Test Cases
 
-1. `testCreateNumberArray2D`: This test method covers the partition of valid input, ensuring that the method correctly creates a 2D array of Number objects based on the input data.
-   
-2. `testCreateNumberArray2D_NullInput`: This test method covers the partition of invalid input, specifically when a null array is passed as input, ensuring that the method handles this case gracefully.
+- **testCreateNumberArray**: Tests the `createNumberArray` method for converting a primitive double array into a Number array. This test case covers the nominal partition where the input is a valid non-empty array of doubles.
+- **testCreateNumberArray2D**: Tests the `createNumberArray2D` method for converting a 2D double array into a 2D Number array. This test case covers the nominal partition for 2D arrays.
+- **testCreateNumberArray2DWithNull**: Tests the `createNumberArray2D` method with a null input, expected to throw an IllegalArgumentException. This covers the error partition related to null input.
+- **testCreateNumberArray2DWithEmptyArray**: Tests the `createNumberArray2D` method with an empty array, expected to throw an IllegalArgumentException. This covers the boundary condition for empty input arrays.
+- **testCalculateColumnTotal**: Uses mocking to test `calculateColumnTotal` method by simulating a Values2D object. This covers the nominal partition for calculating column totals with valid data.
+- **testCalculateColumnTotalWithNullData**: Tests `calculateColumnTotal` with null input, ensuring it handles null safely. This is part of the error partition handling.
+- **testCalculateColumnTotalWithInvalidColumn**: Similar to `testCalculateColumnTotal` but for an invalid column index, ensuring it returns a total of 0.0. This covers boundary conditions for column indices.
+- **testCalculateRowTotal**: Mocks a Values2D object to test `calculateRowTotal`, covering the nominal partition for row total calculations.
+- **testCalculateRowTotalWithNullData**: Tests `calculateRowTotal` with null data, expected to handle null inputs appropriately.
+- **testCalculateRowTotalWithInvalidRow**: Tests row total calculation with an invalid row index, ensuring it handles such cases gracefully.
+- **testGetCumulativePercentages**: Tests the calculation of cumulative percentages from a KeyedValues dataset, covering the nominal partition.
+- **testGetCumulativePercentagesWithNullData**: Tests cumulative percentage calculation with null input, expected to throw an IllegalArgumentException.
+- **testGetCumulativePercentagesWithEmptyData**: Tests the method with empty data, also expected to throw an IllegalArgumentException.
 
-3. `testCreateNumberArray2D_EmptyInput`: This test method covers the partition of invalid input, specifically when an empty array is passed as input, ensuring that the method handles this case gracefully.
+# Range Test Cases
 
-**RangeTest**
+- **testCentralValue**: Tests calculation of the central value of a range, covering several partitions including positive, negative, and symmetric ranges.
+- **testLength**: Tests the calculation of the length of a range, covering various types of ranges.
+- **testLowerBound** and **testUpperBound**: Test the retrieval of lower and upper bounds of a range, covering various scenarios.
+- **testConstrain**: Tests the constrain method, ensuring values outside the range are correctly constrained to the nearest boundary.
+- **testContains**: Tests whether a range correctly identifies if it contains a specific value, covering both true and false scenarios.
 
-1. `testCombine_NullRanges`: This test method covers the partition of invalid input, specifically when null ranges are passed as input, ensuring that the method handles this case gracefully.
+## Benefits of Using Mocking:
 
-2. `testCombine_EmptyRanges`: This test method covers the partition of invalid input, specifically when empty ranges are passed as input, ensuring that the method handles this case gracefully.
+- **Isolation**: Mocking allows for the testing of components in isolation, without the need for the actual dependencies to be present. This is particularly useful in unit testing where you want to test the functionality of a single component.
+- **Control Over Behavior**: It provides control over the behavior of the mocked objects, allowing for the simulation of various scenarios that might be hard to replicate with actual objects (e.g., error conditions, exceptional cases).
+- **Simplification**: Simplifies testing by removing the need to set up complex object graphs or databases, leading to faster and more focused tests.
 
-3. `testCombine_DisjointRanges`: This test method covers the partition of valid input, ensuring that the method correctly combines disjoint ranges into a single range.
+## Drawbacks of Using Mocking:
 
-4. `testCombine_OverlappingRanges`: This test method covers the partition of valid input, ensuring that the method correctly combines overlapping ranges into a single range.
+- **Complexity**: Can introduce complexity into tests, making them harder to understand and maintain.
+- **Overuse**: Overuse of mocks can lead to tests that are more about the interactions with the mocks rather than the actual functionality being tested, potentially missing integration issues.
+- **Brittleness**: Tests can become brittle if the implementation changes but the functionality remains the same, leading to false negatives in testing outcomes.
 
-5. `testCombine_AdjacentRanges`: This test method covers the partition of valid input, ensuring that the method correctly combines adjacent ranges into a single range.
-
-These test cases collectively provide thorough coverage of the functionality of the `DataUtilities` and `Range` classes, ensuring that both valid and invalid inputs are handled appropriately according to the specifications outlined in the JavaDoc documentation.
 
 
 # 4 How the team work/effort was divided and managed
