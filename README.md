@@ -29,6 +29,8 @@ To enhance the robustness of the test suite, the team conducted a comprehensive 
 
 ## DataUtilities Test Cases
 
+![DU Tests](media/DataUtilitiesTests.png)
+
 - **testCreateNumberArray**: Tests the `createNumberArray` method for converting a primitive double array into a Number array. This test case covers the nominal partition where the input is a valid non-empty array of doubles.
 - **testCreateNumberArray2D**: Tests the `createNumberArray2D` method for converting a 2D double array into a 2D Number array. This test case covers the nominal partition for 2D arrays.
 - **testCreateNumberArray2DWithNull**: Tests the `createNumberArray2D` method with a null input, expected to throw an IllegalArgumentException. This covers the error partition related to null input.
