@@ -27,7 +27,7 @@ To enhance the robustness of the test suite, the team conducted a comprehensive 
 # 3 Test cases developed
 
 
-# DataUtilities Test Cases
+## DataUtilities Test Cases
 
 - **testCreateNumberArray**: Tests the `createNumberArray` method for converting a primitive double array into a Number array. This test case covers the nominal partition where the input is a valid non-empty array of doubles.
 - **testCreateNumberArray2D**: Tests the `createNumberArray2D` method for converting a 2D double array into a 2D Number array. This test case covers the nominal partition for 2D arrays.
@@ -43,7 +43,7 @@ To enhance the robustness of the test suite, the team conducted a comprehensive 
 - **testGetCumulativePercentagesWithNullData**: Tests cumulative percentage calculation with null input, expected to throw an IllegalArgumentException.
 - **testGetCumulativePercentagesWithEmptyData**: Tests the method with empty data, also expected to throw an IllegalArgumentException.
 
-# Range Test Cases
+## Range Test Cases
 
 - **testCentralValue**: Tests calculation of the central value of a range, covering several partitions including positive, negative, and symmetric ranges.
 - **testLength**: Tests the calculation of the length of a range, covering various types of ranges.
