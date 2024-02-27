@@ -45,6 +45,8 @@ To enhance the robustness of the test suite, the team conducted a comprehensive 
 
 ## Range Test Cases
 
+![Range Tests](media/RangeTests.png)
+
 - **testCentralValue**: Tests calculation of the central value of a range, covering several partitions including positive, negative, and symmetric ranges.
 - **testLength**: Tests the calculation of the length of a range, covering various types of ranges.
 - **testLowerBound** and **testUpperBound**: Test the retrieval of lower and upper bounds of a range, covering various scenarios.
